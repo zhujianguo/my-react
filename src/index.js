@@ -4,8 +4,8 @@ import './index.css';
 class Square extends PureComponent {
   render() {
     return (
-      <button className="square">
-        {/*TODO */}
+      <button className="square" onClick={()=>console.log('我被点击了',this)}>
+        {this.props.value}
       </button>
     )
   }
@@ -13,7 +13,7 @@ class Square extends PureComponent {
 
 class Board extends PureComponent {
   renderSquare(i) {
-    return <Square />;
+    return <Square value={i} />;
   }
   render() {
     const status = 'Nest player:X';
